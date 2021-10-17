@@ -1,39 +1,25 @@
-import eolAxios, { schoolList, newsList } from "../../axios"
-import { Layout } from "../../components/common"
+import { useState, useEffect } from "react"
+import { useSelector } from "react-redux"
+import { PROVINCE } from '../../assets/static'
 
-
-export default function Home({ history }) {
-  console.log(history)
-  function getData() {
-    eolAxios({
-      path: schoolList
-    }).then(e => {
-      console.log(e)
+function Home(props) {
+  const { history } = props
+  const { provinceid } = useSelector(store => store.userLocation)
+  const [proviceName, setProvinceName] = useState('')
+  useEffect(() => {
+    setProvinceName(() => {
+      let item = PROVINCE.find((item) => { return item.provinceid.toString() === provinceid.toString() })
+      return item.province
     })
-  }
-  function getData1() {
-    eolAxios({
-      path: newsList
-    }).then(e => {
-      console.log(e)
-    })
-  }
+  }, [provinceid])
   return (
     <div>
-      <Layout title="首页" header={false} footer={false}>
-        <div>
-          home
-          <button onClick={getData}>
-            发送请求
-          </button>
-          <button onClick={getData1}>
-            发送请求
-          </button>
-          <button onClick={() => history.push("/example")}>
-            去example
-          </button>
-        </div>
-      </Layout>
+      您当前定位：{proviceName}
+      <button onClick={() => { history.push('/example') }}>
+        点击查看示例
+      </button>
     </div>
   )
 }
+
+export default Home

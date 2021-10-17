@@ -1,6 +1,5 @@
-import EolEchart from "./EolEchart"
-import EolSwiper from "./EolSwiper"
+import RequestContent from "./RequestContent"
 
 export {
-  EolSwiper, EolEchart
+  RequestContent
 }

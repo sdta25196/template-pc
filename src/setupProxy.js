@@ -4,7 +4,8 @@ module.exports = function (app) {
   for (let [_, proxy] of Object.entries(proxys)) {
     app.use(
       createProxyMiddleware(proxy, {
-        target: proxy.startsWith("/api.") ? `http:/${proxy}` : `https:/${proxy}`,
+        target: `http:/${proxy}`,
+        // target: proxy.startsWith("/api.") ? `http:/${proxy}` : `https:/${proxy}`,
         secure: false,
         changeOrigin: true,
         pathRewrite: (path, _) => path.replace(proxy, '')

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-
+import styles from './sass/Loading.module.scss'
 /**
 *
 * @author: 田源
@@ -19,7 +19,18 @@ function Loading() {
   }, [])
   return (
     <div>
-      {waiting && "loading...."}
+      {
+        waiting &&
+        <div className={styles.loadingBox}>
+          <div >
+            <div className={styles.loading}></div>
+            <div className={styles.loading}></div>
+            <div className={styles.loading}></div>
+            <div className={styles.loading}></div>
+            <div className={styles.loading}></div>
+          </div>
+        </div>
+      }
     </div>
   )
 }

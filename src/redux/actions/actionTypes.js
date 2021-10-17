@@ -1,1 +1,1 @@
-export const ADD_DEMO = 'ADD_DEMO'
+export const UPDATE_USER_LOCATION = 'update_user_location'

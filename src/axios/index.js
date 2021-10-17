@@ -1,4 +1,4 @@
-import eolAxios from './eolAxios'
+import EolAxios from './eolAxios'
 
-export * from './eolApiRealUrl'
-export default eolAxios
+export * as API from './eolApi'
+export default EolAxios

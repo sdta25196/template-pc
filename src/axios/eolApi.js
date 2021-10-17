@@ -1,12 +1,14 @@
-import realUrl from './eolApiRealUrl'
-// 生产环境下，url添加 https://
-function isProduction(url) {
-  return (process.env.NODE_ENV === "production" ? "https://" + url : url)
+const { api } = require('./eolApiDomain')
+
+const realUrl = {}
+function setRealUrl(describe, key, value) {
+  realUrl[key] = value
 }
 
-// 根据path获取真实url
-function getRealUrl(path, params) {
-  return isProduction(realUrl[path](params))
-}
+export const staticTest = 'staticTest'
 
-export default getRealUrl
+setRealUrl(`接口 example, params:[id]`,
+  staticTest, (params) => api + `/data_json/toolbar/toolbar${params[0]}.json`
+)
+
+export default realUrl

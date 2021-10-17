@@ -8,8 +8,8 @@
 */
 class CachePorxy {
   static #instance = null
-  apiMap = {}
-  pending = {}
+  apiMap = new Map()
+  pending = new Map()
 
   constructor() {
     return this.#setTnstance()

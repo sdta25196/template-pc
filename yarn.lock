@@ -3985,6 +3985,11 @@ crypto-browserify@^3.11.0:
     randombytes "^2.0.0"
     randomfill "^1.0.3"
 
+crypto-js@^3.3.0:
+  version "3.3.0"
+  resolved "https://registry.nlark.com/crypto-js/download/crypto-js-3.3.0.tgz#846dd1cce2f68aacfa156c8578f926a609b7976b"
+  integrity sha1-hG3RzOL2iqz6FWyFePkmpgm3l2s=
+
 crypto-random-string@^1.0.0:
   version "1.0.0"
   resolved "https://registry.nlark.com/crypto-random-string/download/crypto-random-string-1.0.0.tgz#a230f64f568310e1498009940790ec99545bca7e"
@@ -4556,6 +4561,13 @@ dom-serializer@^1.0.1:
     domelementtype "^2.0.1"
     domhandler "^4.2.0"
     entities "^2.0.0"
+
+dom7@^2.1.2:
+  version "2.1.5"
+  resolved "https://registry.nlark.com/dom7/download/dom7-2.1.5.tgz#a79411017800b31d8400070cdaebbfc92c1f6377"
+  integrity sha1-p5QRAXgAsx2EAAcM2uu/ySwfY3c=
+  dependencies:
+    ssr-window "^2.0.0"
 
 domain-browser@^1.1.1:
   version "1.2.0"
@@ -7304,6 +7316,11 @@ js-base64@^2.1.8:
   version "2.6.4"
   resolved "https://registry.nlark.com/js-base64/download/js-base64-2.6.4.tgz?cache=0&sync_timestamp=1621703335082&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fjs-base64%2Fdownload%2Fjs-base64-2.6.4.tgz#f4e686c5de1ea1f867dbcad3d46d969428df98c4"
   integrity sha1-9OaGxd4eofhn28rT1G2WlCjfmMQ=
+
+js-md5@^0.7.3:
+  version "0.7.3"
+  resolved "https://registry.npm.taobao.org/js-md5/download/js-md5-0.7.3.tgz#b4f2fbb0b327455f598d6727e38ec272cd09c3f2"
+  integrity sha1-tPL7sLMnRV9ZjWcn447Ccs0Jw/I=
 
 "js-tokens@^3.0.0 || ^4.0.0", js-tokens@^4.0.0:
   version "4.0.0"
@@ -11550,6 +11567,16 @@ sshpk@^1.7.0:
     safer-buffer "^2.0.2"
     tweetnacl "~0.14.0"
 
+ssr-window@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.nlark.com/ssr-window/download/ssr-window-1.0.1.tgz?cache=0&sync_timestamp=1628092229676&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fssr-window%2Fdownload%2Fssr-window-1.0.1.tgz#30752a6a4666e7767f0b7e6aa6fc2fdbd0d9b369"
+  integrity sha1-MHUqakZm53Z/C35qpvwv29DZs2k=
+
+ssr-window@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.nlark.com/ssr-window/download/ssr-window-2.0.0.tgz?cache=0&sync_timestamp=1628092229676&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fssr-window%2Fdownload%2Fssr-window-2.0.0.tgz#98c301aef99523317f8d69618f0010791096efc4"
+  integrity sha1-mMMBrvmVIzF/jWlhjwAQeRCW78Q=
+
 ssri@^6.0.1:
   version "6.0.2"
   resolved "https://registry.nlark.com/ssri/download/ssri-6.0.2.tgz?cache=0&sync_timestamp=1621364918494&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fssri%2Fdownload%2Fssri-6.0.2.tgz#157939134f20464e7301ddba3e90ffa8f7728ac5"
@@ -11901,10 +11928,13 @@ svgo@^1.0.0, svgo@^1.2.2:
     unquote "~1.1.1"
     util.promisify "~1.0.0"
 
-swiper@3.4.2:
-  version "3.4.2"
-  resolved "https://registry.nlark.com/swiper/download/swiper-3.4.2.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fswiper%2Fdownload%2Fswiper-3.4.2.tgz#39d6b410b1a39833e1f72d3b72999df5f5e38392"
-  integrity sha1-Oda0ELGjmDPh9y07cpmd9fXjg5I=
+swiper@4.4.6:
+  version "4.4.6"
+  resolved "https://registry.nlark.com/swiper/download/swiper-4.4.6.tgz?cache=0&sync_timestamp=1628525157360&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fswiper%2Fdownload%2Fswiper-4.4.6.tgz#0dfa9d66e39811c73e96ea55cea61047a4091667"
+  integrity sha1-DfqdZuOYEcc+lupVzqYQR6QJFmc=
+  dependencies:
+    dom7 "^2.1.2"
+    ssr-window "^1.0.1"
 
 symbol-tree@^3.2.4:
   version "3.2.4"
