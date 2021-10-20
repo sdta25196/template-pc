@@ -21,9 +21,13 @@ class EolAxios {
    * @path {请求路径 string}
    * @method {请求方法 post|get 默认get} 
    * @params {静态请求中的参数 array}
+   * @needCache {当前接口是否需要缓存，默认为true}
+   * @needBlock {当前接口是否需要阻拦多次请求，默认为true}
+   * 
+   * !示例：通常静态接口全部需要缓存，存在并发调用时，可设置(needBlock=false)
    */
-  async staticRequest({ path, method = "get", params = [] }) {
-    return this.#sendRequest(getRealUrl(path, params), method)
+  async staticRequest({ path, method = "get", params = [], needCache, needBlock }) {
+    return this.#sendRequest(getRealUrl(path, params), method, needCache, needBlock)
   }
 
   /**
@@ -32,8 +36,12 @@ class EolAxios {
    * @method {请求方法 post|get 默认post} 
    * @formData {请求中的参数 object}
    * @needCache {当前接口是否需要缓存，默认为true}
+   * @needBlock {当前接口是否需要阻拦多次请求，默认为true}
+   * 
+   * !示例： 点赞按钮请求需要设置：阻拦(needBlock=true)，不缓存(needCache=false)
+   * !示例： 并发调用同一(非点赞\关注等功能按钮)接口需要设置：缓存(needCache=true)，不阻拦(needBlock=false)
    */
-  async dynamicRequest({ path, method = "post", formData = {}, needCache }) {
+  async dynamicRequest({ path, method = "post", formData = {}, needCache, needBlock }) {
 
     let url = getRealUrl(path)
 
@@ -44,7 +52,7 @@ class EolAxios {
       }
     }
     // 请求
-    const response = await this.#sendRequest(url, method, formData, needCache)
+    const response = await this.#sendRequest(url, method, formData, needCache, needBlock)
 
     return response
   }
@@ -57,14 +65,14 @@ class EolAxios {
     this.#canceledRequest.clear()
   }
 
-  async #sendRequest(url, method, formData = {}, needCache = true) {
+  async #sendRequest(url, method, formData = {}, needCache = true, needBlock = true) {
     const cacheKey = url + JSON.stringify(formData)
     const cacheRes = this.#getCache(cacheKey)
     if (cacheRes && needCache) {
       return cacheRes
     }
     const isPending = this.#pendingCache(cacheKey)
-    if (isPending) return null
+    if (isPending && needBlock) return null
     return this.#axios({ url, method, formData, cacheKey })
   }
 
