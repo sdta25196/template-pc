@@ -6,7 +6,7 @@ import { RequestContent } from "../../components/example"
 function DemoRequest(props) {
 
   const [staticRes, setStaticRes] = useState({})
-  const [dynamicRes, setDynamicRes] = useState([])
+  const [dynamicRes] = useState([])
 
   useEffect(() => {
     // 静态请求

@@ -31,7 +31,7 @@ function App() {
           dispatch(updateUserLocation(initLocation))
           setLocalIsDone(true)
         }
-      });
+      })
     }
   }, [dispatch, provinceid, localIsDone])
 

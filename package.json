@@ -29,6 +29,9 @@
   },
   "devDependencies": {
     "cross-env": "^7.0.3",
+    "unimported": "^1.19.1",
+    "useless-files-webpack-plugin": "^1.0.1",
+    "uglifyjs-webpack-plugin": "^2.2.0",
     "optimist": "^0.6.1"
   },
   "scripts": {
@@ -38,6 +41,9 @@
     "start:release": "cross-env REACT_APP_API_MODEL=RELEASE react-app-rewired start",
     "build:dev": "cross-env REACT_APP_API_MODEL=DEV react-app-rewired build",
     "build:release": "cross-env REACT_APP_API_MODEL=RELEASE GENERATE_SOURCEMAP=false react-app-rewired build",
+    "lint": " eslint ./src/**/*.{js,jsx}",
+    "fix": "eslint ./src/**/*.{js,jsx} --fix --fix-type [layout]",
+    "unimport": "unimported",
     "test": "react-app-rewired test",
     "eject": "react-scripts eject"
   },

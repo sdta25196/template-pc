@@ -17,7 +17,7 @@ class CachePorxy {
 
   #setTnstance() {
     if (!CachePorxy.#instance) {
-      CachePorxy.#instance = this;
+      CachePorxy.#instance = this
     }
     return CachePorxy.#instance
   }

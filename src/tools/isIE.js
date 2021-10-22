@@ -1,8 +1,8 @@
 function isIE() {
   if (!!window.ActiveXObject || "ActiveXObject" in window) {
-    return true;
+    return true
   } else {
-    return false;
+    return false
   }
 }
 export default isIE

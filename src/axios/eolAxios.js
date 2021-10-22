@@ -98,7 +98,7 @@ class EolAxios {
       throw { response: res } // eslint-disable-line
     } catch (err) {
       if (err.response && process.env.REACT_APP_API_MODEL === 'DEV') {
-        message.info(err.response.statusText);
+        message.info(err.response.statusText)
       } else {
         console.log(err)
       }
@@ -120,7 +120,7 @@ class EolAxios {
     this.#cachePorxy.apiMap.set(cacheKey, data)
   }
 
-  /**当前接口是否pending中 */
+  /** 当前接口是否pending中 */
   #pendingCache(cacheKey) {
     if (this.#cachePorxy.pending.get(cacheKey)) {
       return true
@@ -130,12 +130,12 @@ class EolAxios {
     }
   }
 
-  /**添加pending接口 */
+  /** 添加pending接口 */
   #addPendingCache(cacheKey) {
     this.#cachePorxy.pending.set(cacheKey, true)
   }
 
-  /**删除pending中的接口状态 */
+  /** 删除pending中的接口状态 */
   #deletePendingCache(cacheKey) {
     delete this.#cachePorxy.pending.delete(cacheKey)
   }
