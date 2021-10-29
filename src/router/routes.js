@@ -1,10 +1,10 @@
 import { lazy } from 'react'
-import { setRouter, setDeepRouter } from './setRouterFun'
+import setRouter from './setRouterFun'
 
 
 const routes = [
   setRouter("首页", { path: "/", exact: true, Comp: lazy(() => import('../pages/home')) }),
-  setDeepRouter("示例页面", {
+  setRouter("示例页面", {
     path: "/example", exact: false, Comp: lazy(() => import('../pages/example')),
     children: [
       {
